@@ -1,8 +1,14 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>My First Flask App</title>
+    <title>Home</title>
 </head>
 <body>
-    <h1>Welcome...</h1>
+    <nav>
+        <a href="{{ url_for('fun') }}">Home</a> | 
+        <a href="{{ url_for('about') }}">About</a>
+    </nav>
+    <h1>Welcome to my Flask App!</h1>
+    <p>This is the home page.</p>
 </body>
 </html>
