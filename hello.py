@@ -41,12 +41,13 @@ def hello_user(name):
 def success(name):
     return "Hello %s" % name
 
-@app1.route("/login", methods=['POST','GET'])
+@app1.route("/login", methods=['POST', 'GET'])
 def login():
-    if request.method=='POST':
-        return "Hello Post"
-    else: 
-        return "Hello GET"
+    if request.method == 'POST':
+        user = request.form['nm'] # This 'nm' must match the 'name' attribute in your HTML input
+        return redirect(url_for('success', name=user))
+    else:
+        return render_template("login.html")
 
 
 if __name__=="__main__":
